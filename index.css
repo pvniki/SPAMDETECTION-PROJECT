@@ -1,0 +1,203 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: url('https://cdn.analyticsvidhya.com/wp-content/uploads/2021/06/3801299240.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+button {
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.reset-btn {
+  background: #dc3545;
+}
+
+.reset-btn:hover {
+  background: #c82333;
+}
+
+/* Loader */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Result Display */
+#summaryResult {
+  margin-top: 25px;
+  white-space: pre-line;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* Score Bar */
+.score-bar-container {
+  margin-top: 30px;
+}
+
+#spamScoreBar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+#spamScoreFill {
+  height: 100%;
+  width: 0%;
+  background-color: #ff4d4d;
+  transition: width 0.5s ease;
+}
+
+#spamPercentage {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Custom Spam Words */
+.custom-word-section {
+  margin-top: 30px;
+}
+
+.custom-word-section label {
+  font-weight: 500;
+  color: #333;
+}
+
+.custom-input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#customWords {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+.add-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.custom-list {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+  max-width: 250px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}

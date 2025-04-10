@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Spam Classifier</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Email Spam Classifier</h1>
+
+      <div class="inputs" id="inputsContainer"></div>
+
+      <div class="button-group">
+        <button onclick="predictSpam()">Predict</button>
+        <button onclick="resetInputs()" class="reset-btn">Reset</button>
+      </div>
+
+      <div id="loader" class="loader hidden"></div>
+
+      <div id="summaryResult"></div>
+
+      <!-- Spam Accuracy Bar -->
+      <div class="score-bar-container">
+        <label>Spam Accuracy</label>
+        <div id="spamScoreBar">
+          <div id="spamScoreFill"></div>
+        </div>
+        <span id="spamPercentage">0%</span>
+      </div>
+
+      <!-- Custom Spam Word Section -->
+      <div class="custom-word-section">
+        <label for="customWords">Add Custom Spam Words (comma separated):</label>
+        <div class="custom-input-wrapper">
+          <input type="text" id="customWords" placeholder="e.g., winner, limited offer" />
+          <button onclick="addCustomWords()" class="add-btn">Add</button>
+        </div>
+        <div id="customListDisplay" class="custom-list"></div>
+      </div>
+
+      <!-- Popup and Sound -->
+      <div id="popup" class="popup">Spam detected!</div>
+      <audio id="spamSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
